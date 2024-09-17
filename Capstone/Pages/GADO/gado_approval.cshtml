@@ -1,0 +1,310 @@
+﻿@page
+@model Capstone.Pages.GADO.gado_approvalModel
+@{
+	Layout = "_AdminLayout";
+}
+<!-- Internal CSS -->
+<style>
+    /* General Styles */
+    .head-title {
+        margin-bottom: 20px;
+    }
+
+    .head-title .left h1,
+    .head-title .left h3 {
+        margin: 0;
+    }
+
+    .gadoapprovalmain_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gado_approval_tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .gado_approval_tabs .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #f1f1f1;
+        margin-right: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .gado_approval_tabs .tab.active {
+        background-color: #772a2a;
+        color: white;
+    }
+
+    /* Ensure "content" is displayed when tab is active */
+    .content {
+        display: none;
+    }
+
+    .content.active {
+        display: block;
+    }
+
+    /* Align "For Approval" and "Approved" sub-tabs under "Plan and Budget" */
+    .sub-tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .sub-tabs .sub-tab {
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: #e9ecef;
+        margin-right: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sub-tabs .sub-tab.active {
+                background-color: #772a2a;
+        color: white;
+    }
+
+    .sub-content {
+        display: none;
+    }
+
+    .sub-content.active {
+        display: block;
+    }
+
+    .dropdown {
+        margin-bottom: 15px;
+    }
+
+    .dropdown-header {
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-header:hover {
+        background-color: #e2e6ea;
+    }
+
+    .dropdown-content {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    .dropdown-content p {
+        margin: 0 0 10px;
+    }
+
+    .dropdown-content textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    .dropdown-content button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    (max-width: 768px) {
+        .gado_approval_tabs,
+        .sub-tabs {
+            flex-direction: column;
+        }
+
+        .gado_approval_tabs .tab,
+        .sub-tabs .sub-tab {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+
+<!-- SIDEBAR -->
+<section id="sidebar">
+
+    <!-- Logo -->
+    <a href="#" class="logo">
+        <img src="~/images/GEDSI Hub logo.png" alt="GEDSI Hub Logo">
+        <span class="text">GEDSI Hub</span>
+    </a>
+
+    <!-- Sidebar options and Icons-->
+    <ul class="side-menu top">
+        <li >
+            <a asp-page="/GADO/gado_dashboard">
+                <i class="bi bi-clipboard-data"></i>
+                <span class="text">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a asp-page="/GADO/gado_messages">
+                <i class="bi bi-envelope-open"></i>
+                <span class="text">Messages</span>
+            </a>
+        </li>
+        <li>
+            <a asp-page="/GADO/gadfps">
+                <i class="bi bi-people"></i>
+                <span class="text">GAD Focal Point System</span>
+            </a>
+        </li>
+        <li class="active">
+            <a asp-page="/GADO/gado_approval">
+                <i class="bi bi-check2-square"></i>
+                <span class="text">Approval</span>
+            </a>
+        </li>
+        <li>
+            <a asp-page="/GADO/gado_reports">
+                <i class="bi bi-file-earmark-ruled"></i>
+                <span class="text">Reports</span>
+            </a>
+        </li>
+        <li>
+            <a asp-page="/GADO/gado_mandates">
+                <i class="bi bi-card-checklist"></i>
+                <span class="text">Mandates</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<!-- SIDEBAR -->
+
+<!-- Page Content -->
+<div class="head-title">
+    <div class="left">
+        <h1>Approval</h1>
+    </div>
+</div>
+
+<div class="head-title">
+    <div class="left">
+        <h3>Budget and Plans</h3>
+    </div>
+</div>
+
+<!-- Tabs: Plan and Budget | Accomplishment Report -->
+<div class="gadoapprovalmain_container">
+    <div class="gado_approval_tabs">
+        <div id="planAndBudgetTab" class="tab active">Plan and Budget</div>
+        <div id="accomplishmentReportTab" class="tab">Accomplishment Report</div>
+    </div>
+
+    <!-- Content for Plan and Budget Tab -->
+    <div id="planAndBudgetContent" class="content active">
+        <!-- Sub-tabs for Plan and Budget (For Approval, Approved) -->
+        <div class="sub-tabs">
+            <div id="forApprovalTab" class="sub-tab active">
+                <i class="bi bi-hourglass-bottom"></i>
+                <span>For Approval</span>
+            </div>
+            <div id="approvedTab" class="sub-tab">
+                <i class="bi bi-clipboard-check-fill"></i>
+                <span>Approved</span>
+            </div>
+        </div>
+
+        <!-- For Approval Content -->
+        <div id="forApprovalContent" class="sub-content active">
+            <div class="dropdown">
+                <div class="dropdown-header">Focal Person 1 <span class="arrow">&#9660;</span></div>
+                <div class="dropdown-content">
+                    <p>Description for Focal Person 1</p>
+                    <textarea placeholder="Type your comment here"></textarea>
+                    <button>
+                        <i class="bi bi-check-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-header">Focal Person 2 <span class="arrow">&#9660;</span></div>
+                <div class="dropdown-content">
+                    <p>Description for Focal Person 2</p>
+                    <textarea placeholder="Type your comment here"></textarea>
+                    <button>
+                        <i class="bi bi-check-circle"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-header">Focal Person 3 <span class="arrow">&#9660;</span></div>
+                <div class="dropdown-content">
+                    <p>Description for Focal Person 3</p>
+                    <textarea placeholder="Type your comment here"></textarea>
+                    <button>
+                        <i class="bi bi-check-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approved Content -->
+        <div id="approvedContent" class="sub-content">
+            *****************************************************
+        </div>
+    </div>
+
+    <!-- Content for Accomplishment Report Tab -->
+    <div id="accomplishmentReportContent" class="content">
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+        <div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Internal JavaScript -->
+<script>
+    // Handle tab switching between 'Plan and Budget' and 'Accomplishment Report'
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelector('.tab.active').classList.remove('active');
+            tab.classList.add('active');
+
+            let target = tab.id === 'planAndBudgetTab' ? '#planAndBudgetContent' : '#accomplishmentReportContent';
+            document.querySelector('.content.active').classList.remove('active');
+            document.querySelector(target).classList.add('active');
+        });
+    });
+
+    // Handle sub-tab switching between 'For Approval' and 'Approved'
+    document.querySelectorAll('.sub-tab').forEach(subTab => {
+        subTab.addEventListener('click', function() {
+            document.querySelector('.sub-tab.active').classList.remove('active');
+            subTab.classList.add('active');
+
+            let target = subTab.id === 'forApprovalTab' ? '#forApprovalContent' : '#approvedContent';
+            document.querySelector('.sub-content.active').classList.remove('active');
+            document.querySelector(target).classList.add('active');
+        });
+    });
+
+    // Handle dropdown toggling for focal person descriptions
+    document.querySelectorAll('.dropdown-header').forEach(dropdownHeader => {
+        dropdownHeader.addEventListener('click', function() {
+            this.nextElementSibling.classList.toggle('active');
+            this.nextElementSibling.style.display = 
+                this.nextElementSibling.style.display === "block" ? "none" : "block";
+        });
+    });
+</script>

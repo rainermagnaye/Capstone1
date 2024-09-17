@@ -1,0 +1,139 @@
+﻿@page
+@model Capstone.Pages.FPS.fps_dashboardModel
+@{
+	Layout = "_AdminLayout";
+
+}
+
+
+<!-- SIDEBAR -->
+<section id="sidebar">
+
+	<!-- Logo -->
+	<a href="#" class="logo">
+		<img src="~/images/GEDSI Hub logo.png" alt="GEDSI Hub Logo">
+		<span class="text">GEDSI Hub</span>
+	</a>
+
+	<!-- Sidebar options and Icons-->
+	<ul class="side-menu top">
+		<li class="active">
+			<a asp-page="/GADO/gado_dashboard">
+				<i class="bi bi-clipboard-data"></i>
+				<span class="text">Dashboard</span>
+			</a>
+		</li>
+		<li>
+			<a asp-page="/GADO/gado_messages">
+				<i class="bi bi-envelope-open"></i>
+				<span class="text">Messages</span>
+			</a>
+		</li>
+		<li>
+			<a asp-page="/GADO/gadfps">
+				<i class="bi bi-people"></i>
+				<span class="text">GAD Focal Point System</span>
+			</a>
+		</li>
+		<li>
+			<a asp-page="/GADO/gado_approval">
+				<i class="bi bi-check2-square"></i>
+				<span class="text">Approval</span>
+			</a>
+		</li>
+		<li>
+			<a asp-page="/GADO/gado_reports">
+				<i class="bi bi-file-earmark-ruled"></i>
+				<span class="text">Reports</span>
+			</a>
+		</li>
+	</ul>
+</section>
+<!-- SIDEBAR -->
+
+
+<!-- CONTENT -->
+<div class="head-title">
+	<div class="left">
+		<h1>Dashboard</h1>
+	</div>
+</div>
+
+<ul class="box-info">
+	<li>
+		<i class="bi bi-calendar2-check"></i>
+		<span class="text">
+			<h3>2024</h3>
+			<p>Calendar</p>
+		</span>
+	</li>
+
+	<li>
+		<i class="bi bi-check2-circle"></i>
+		<span class="text">
+			<h3>10/38</h3>
+			<p>Submitted AR</p>
+		</span>
+	</li>
+
+	<li>
+		<i class="bi bi-check2-circle"></i>
+		<span class="text">
+			<h3>8/38</h3>
+			<p>Submitted GBP</p>
+		</span>
+	</li>
+</ul>
+
+
+<div class="table-data">
+	<div class="order">
+		<div class="head">
+			<h3>Summary</h3>
+			<i class='bx bx-search'></i>
+			<i class='bx bx-filter'></i>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Unit</th>
+					<th>Report</th>
+					<th>Date</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>OSS</td>
+					<td>GBP</td>
+					<td>12-15-2020</td>
+					<td><span class="status pending">Pending</span></td>
+				</tr>
+				<tr>
+					<td>CCIS</td>
+					<td>GBP</td>
+					<td>06-15-2021</td>
+					<td><span class="status pending">Pending</span></td>
+				</tr>
+				<tr>
+					<td>OVP</td>
+					<td>AR</td>
+					<td>01-15-2021</td>
+					<td><span class="status submitted">Submitted</span></td>
+				</tr>
+				<tr>
+					<td>OVP</td>
+					<td>GBP</td>
+					<td>01-15-2022</td>
+					<td><span class="status submitted">Submitted</span></td>
+				</tr>
+				<tr>
+					<td>OVP</td>
+					<td>AR</td>
+					<td>01-15-2021</td>
+					<td><span class="status submitted">Submitted</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- CONTENT -->

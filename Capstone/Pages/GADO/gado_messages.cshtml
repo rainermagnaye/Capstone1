@@ -1,0 +1,151 @@
+﻿@page
+@model Capstone.Pages.GADO.gado_messagesModel
+@{
+	Layout = "_AdminLayout";
+}
+
+<!-- SIDEBAR -->
+<section id="sidebar">
+
+	<!-- Logo -->
+	<a href="#" class="logo">
+		<img src="~/images/GEDSI Hub logo.png" alt="GEDSI Hub Logo">
+		<span class="text">GEDSI Hub</span>
+	</a>
+
+	<!-- Sidebar options and Icons-->
+	<ul class="side-menu top">
+		<li>
+			<a asp-page="/GADO/gado_dashboard">
+				<i class="bi bi-clipboard-data"></i>
+				<span class="text">Dashboard</span>
+			</a>
+		</li>
+
+		<li class="active">
+			<a asp-page="/GADO/gado_messages">
+				<i class="bi bi-envelope-open"></i>
+				<span class="text">Messages</span>
+			</a>
+		</li>
+
+		<li>
+			<a asp-page="/GADO/gadfps">
+				<i class="bi bi-people"></i>
+				<span class="text">GAD Focal Point System</span>
+			</a>
+		</li>
+
+		<li>
+			<a asp-page="/GADO/gado_approval">
+				<i class="bi bi-check2-square"></i>
+				<span class="text">Approval</span>
+			</a>
+		</li>
+
+		<li>
+			<a asp-page="/GADO/gado_reports">
+				<i class="bi bi-file-earmark-ruled"></i>
+				<span class="text">Reports</span>
+			</a>
+		</li>
+
+		<li>
+			<a asp-page="/GADO/gado_mandates">
+				<i class="bi bi-card-checklist"></i>
+				<span class="text">Mandates</span>
+			</a>
+		</li>
+	</ul>
+</section>
+<!-- SIDEBAR -->
+
+
+	<div class="head-title">
+		<div class="left">
+			<h1>Messages</h1>
+		</div>
+		<a href="compose.html" class="btn-download">
+			<i class="bi bi-pencil-square"></i>
+			<span class="text">Compose</span>
+		</a>
+	</div>
+
+
+	<div class="table-data">
+		<div class="order">
+			<div class="head">
+				<h3>Inbox</h3>
+				<i class='bx bx-search'></i>
+				<i class='bx bx-filter'></i>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>User</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<img src="~/images/profile.png">
+							<p>John Dustin Santos</p>
+						</td>
+						<td>01-10-2021</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="~/images/profile.png">
+							<p>Rainer Magnaye</p>
+						</td>
+						<td>01-10-2021</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="~/images/profile.png">
+							<p>Karl Christian Laurea</p>
+						</td>
+						<td>01-10-2021</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="~/images/profile.png">
+							<p>Aldrich Chen Kenneth Perez</p>
+						</td>
+						<td>01-10-2021</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="~/images/profile.png">
+							<p>Charwyn Aaron Apolinar</p>
+						</td>
+						<td>01-10-2021</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="~/images/profile.png">
+							<p>Juan Dela Cruz</p>
+						</td>
+						<td>01-10-2021</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="~/images/profile.png">
+							<p>Juan Delacruz</p>
+						</td>
+						<td>01-10-2021</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="~/images/profile.png">
+							<p>Juan Dela Cruz</p>
+						</td>
+						<td>01-10-2021</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+<!-- MAIN -->

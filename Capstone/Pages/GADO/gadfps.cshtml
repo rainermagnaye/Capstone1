@@ -1,0 +1,62 @@
+﻿@page
+@model Capstone.Pages.GADO.gadfpsModel
+@{
+	Layout = "_AdminLayout";
+
+}
+
+<!-- SIDEBAR -->
+<section id="sidebar">
+
+	<!-- Logo -->
+	<a href="#" class="logo">
+		<img src="~/images/GEDSI Hub logo.png" alt="GEDSI Hub Logo">
+		<span class="text">GEDSI Hub</span>
+	</a>
+
+	<!-- Sidebar options and Icons-->
+	<ul class="side-menu top">
+		<li>
+			<a asp-page="/GADO/gado_dashboard">
+				<i class="bi bi-clipboard-data"></i>
+				<span class="text">Dashboard</span>
+			</a>
+		</li>
+
+		<li>
+			<a asp-page="/GADO/gado_messages">
+				<i class="bi bi-envelope-open"></i>
+				<span class="text">Messages</span>
+			</a>
+		</li>
+
+		<li class="active">
+			<a asp-page="/GADO/gadfps">
+				<i class="bi bi-people"></i>
+				<span class="text">GAD Focal Point System</span>
+			</a>
+		</li>
+
+		<li>
+			<a asp-page="/GADO/gado_approval">
+				<i class="bi bi-check2-square"></i>
+				<span class="text">Approval</span>
+			</a>
+		</li>
+
+		<li>
+			<a asp-page="/GADO/gado_reports">
+				<i class="bi bi-file-earmark-ruled"></i>
+				<span class="text">Reports</span>
+			</a>
+		</li>
+
+		<li>
+			<a asp-page="/GADO/gado_mandates">
+				<i class="bi bi-card-checklist"></i>
+				<span class="text">Mandates</span>
+			</a>
+		</li>
+	</ul>
+</section>
+<!-- SIDEBAR -->
